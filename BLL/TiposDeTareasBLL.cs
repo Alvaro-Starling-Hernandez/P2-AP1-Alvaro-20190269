@@ -12,6 +12,26 @@ namespace P2_AP1_Alvaro_20190269.BLL
     public class TiposDeTareasBLL
     {
 
+        public static TiposDeTareas Buscar(int id)
+        {
+            TiposDeTareas tiposDeTarea;
+            Contexto contexto = new Contexto();
+
+            try
+            {
+                tiposDeTarea = contexto.TiposDeTareas.Find(id);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                contexto.Dispose();
+            }
+            return tiposDeTarea;
+        }
 
         public static List<TiposDeTareas> GetList(Expression<Func<TiposDeTareas, bool>> criterio)
         {
