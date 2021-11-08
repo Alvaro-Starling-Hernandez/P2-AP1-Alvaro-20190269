@@ -11,6 +11,7 @@ namespace P2_AP1_Alvaro_20190269.DAL
     public class Contexto : DbContext
     {
         public DbSet<TiposDeTareas> TiposDeTareas { get; set; }
+        public DbSet<Proyectos> Proyectos { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
