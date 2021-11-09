@@ -60,10 +60,10 @@
 
                             <DataGrid x:Name="DetalleDataGrid" ItemsSource="{Binding DetalleAporte}" Height="128" AutoGenerateColumns="False" Margin="0,10" Width="670">
                                 <DataGrid.Columns>
-                                    <DataGridTextColumn Header="Tipo Id"  Width="120"/>
-                                    <DataGridTextColumn Header="Tipo Tarea"  Width="120"/>
-                                    <DataGridTextColumn Header="Requerimiento"  Width="305"/>
-                                    <DataGridTextColumn Header="Tiempo"  Width="120"/>
+                                    <DataGridTextColumn Header="Tipo Id" Binding="{Binding TipoDeTareaId}" Width="120"/>
+                                    <DataGridTextColumn Header="Tipo Tarea" Binding="{Binding Nombre}" Width="120"/>
+                                    <DataGridTextColumn Header="Requerimiento" Binding="{Binding Requerimiento}"  Width="305"/>
+                                    <DataGridTextColumn Header="Tiempo" Binding="{Binding Tiempo}" Width="120"/>
                                 </DataGrid.Columns>
 
                             </DataGrid>

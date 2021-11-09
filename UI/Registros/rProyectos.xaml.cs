@@ -64,11 +64,11 @@ namespace P2_AP1_Alvaro_20190269.UI.Registros
 
         private void BuscarButton_Click(object sender, RoutedEventArgs e)
         {
-            var proyecto1 = ProyectosBLL.Buscar(proyecto.ProyectoId);
+            var Proyecto = ProyectosBLL.Buscar(proyecto.ProyectoId);
 
-            if (proyecto1 != null)
+            if (Proyecto != null)
             {
-                this.proyecto = proyecto1;
+                this.proyecto = Proyecto;
                 this.DataContext = proyecto;
             }
             else
