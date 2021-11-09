@@ -70,7 +70,7 @@
 
                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
 
-                                <Button x:Name="RemoverFilaButton" Click="RemoverFilaButton_Click_1"  Width="100">
+                                <Button x:Name="RemoverFilaButton" Click="RemoverFilaButton_Click" Width="100">
                                     <StackPanel Orientation="Horizontal">
                                         <Image Source="/Resources/Delete-icon-minus.png" />
                                         <Label Content="Remover fila"/>

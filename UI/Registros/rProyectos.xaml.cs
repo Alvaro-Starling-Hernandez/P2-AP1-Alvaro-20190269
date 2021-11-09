@@ -95,18 +95,7 @@ namespace P2_AP1_Alvaro_20190269.UI.Registros
 
         }
 
-        private void RemoverFilaButton_Click(object sender, RoutedEventArgs e)
-        {
-            var detalle = (ProyectosDetalle)DetalleDataGrid.SelectedItem;
-
-            if(DetalleDataGrid.Items.Count >= 1 && DetalleDataGrid.SelectedIndex <= DetalleDataGrid.Items.Count - 1)
-            {
-                proyecto.TiempoTotal -= detalle.Tiempo;
-
-                proyecto.Detalle.RemoveAt(DetalleDataGrid.SelectedIndex);
-                Cargar();
-            }
-        }
+       
 
         private void GuardarButton_Click(object sender, RoutedEventArgs e)
         {
@@ -143,6 +132,19 @@ namespace P2_AP1_Alvaro_20190269.UI.Registros
         private void NuevoButton_Click(object sender, RoutedEventArgs e)
         {
             Limpiar();
+        }
+
+        private void RemoverFilaButton_Click(object sender, RoutedEventArgs e)
+        {
+            var detalle = (ProyectosDetalle)DetalleDataGrid.SelectedItem;
+
+            if (DetalleDataGrid.Items.Count >= 1 && DetalleDataGrid.SelectedIndex <= DetalleDataGrid.Items.Count - 1)
+            {
+                proyecto.TiempoTotal -= detalle.Tiempo;
+
+                proyecto.Detalle.RemoveAt(DetalleDataGrid.SelectedIndex);
+                Cargar();
+            }
         }
     }
 }
