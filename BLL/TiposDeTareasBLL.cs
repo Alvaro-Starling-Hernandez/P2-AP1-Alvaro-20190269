@@ -59,7 +59,7 @@ namespace P2_AP1_Alvaro_20190269.BLL
             Contexto contexto = new Contexto();
             try
             {
-                //lista = contexto.TiposDeTareas.ToList();
+                lista = contexto.TiposDeTareas.ToList();
             }
             catch (Exception)
             {

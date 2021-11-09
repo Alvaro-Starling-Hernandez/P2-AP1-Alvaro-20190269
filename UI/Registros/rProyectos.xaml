@@ -13,7 +13,7 @@
                 <Label Content="Proyecto Id"/>
 
                 <StackPanel Orientation="Horizontal">
-                    <TextBox x:Name="ProyectoIdTextBox"  Width="144" Height="30"/>
+                    <TextBox x:Name="ProyectoIdTextBox" Text="{Binding ProyectoId}" Width="144" Height="30"/>
                     <Button x:Name="BuscarButton" Margin="5,0" Click="BuscarButton_Click">
                         <StackPanel Orientation="Horizontal">
                             <Image Source="/Resources/search-icon.png" />
@@ -23,10 +23,10 @@
                 </StackPanel>
 
                 <Label Content="Fecha"/>
-                <DatePicker x:Name="FechaDatePicker" SelectedDateFormat="Short" Width="145" Height="30" HorizontalAlignment="Left"/>
+                <DatePicker x:Name="FechaDatePicker" SelectedDateFormat="Short" SelectedDate="{Binding Fecha}" Width="145" Height="30" HorizontalAlignment="Left"/>
 
                 <Label Content="Descripcion del Proyecto"/>
-                <TextBox x:Name="DescripcionTextBox" Width="708" Height="50" HorizontalAlignment="Left"/>
+                <TextBox x:Name="DescripcionTextBox" Width="708" Height="50" Text="{Binding Descripcion}" HorizontalAlignment="Left"/>
 
                 <StackPanel Orientation="Vertical">
                     <GroupBox Margin="0,10" Header="Detalle de tarea a realizar" Width="708" HorizontalAlignment="Left">
@@ -39,12 +39,12 @@
 
                                 <StackPanel Orientation="Vertical" Margin="10,0">
                                     <Label Content="Requerimiento de la tarea"/>
-                                    <TextBox x:Name="RequerimientoTextBox" Text="{}" Width="246" Height="30"/>
+                                    <TextBox x:Name="RequerimientoTextBox" Text="{Binding Requerimiento}" Width="246" Height="30"/>
                                 </StackPanel>
 
                                 <StackPanel Orientation="Vertical">
                                     <Label Content="Tiempo (minutos)"/>
-                                    <TextBox x:Name="TiempoTextBox" Text="{}" Width="142" Height="30"/>
+                                    <TextBox x:Name="TiempoTextBox" Text="{Binding Tiempo}" Width="142" Height="30"/>
                                 </StackPanel>
 
                                 <StackPanel>
@@ -82,7 +82,7 @@
                     </GroupBox>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,20,0">
                         <Label Content="Tiempo Total"/>
-                        <TextBox x:Name="MontoTextBox" Width="200" Height="30"  IsReadOnly="True"/>
+                        <TextBox x:Name="MontoTextBox" Text="{Binding TiempoTotal}" Width="200" Height="30"  IsReadOnly="True"/>
                     </StackPanel>
 
 
