@@ -27,6 +27,8 @@ namespace P2_AP1_Alvaro_20190269.UI.Registros
         {
             InitializeComponent();
 
+            this.DataContext = proyecto;
+
             TipoDeTaeaComboBox.ItemsSource = TiposDeTareasBLL.GetTiposDeTareas();
             TipoDeTaeaComboBox.SelectedValuePath = "TipoDeTareaId";
             TipoDeTaeaComboBox.DisplayMemberPath = "Nombre";
@@ -54,11 +56,11 @@ namespace P2_AP1_Alvaro_20190269.UI.Registros
                 MessageBox.Show("Falta la descripcion", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
 
-            if(DetalleDataGrid.Items.Count == 0)
+            /*if(DetalleDataGrid.Items.Count == 0)
             {
                 esValido = false;
-                MessageBox.Show("Falta la descripcion", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
+                MessageBox.Show("Falta llenar el datagrid", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }*/
             return esValido;
         }
 
@@ -76,24 +78,11 @@ namespace P2_AP1_Alvaro_20190269.UI.Registros
                 Limpiar();
                 MessageBox.Show("No existe", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
-        }
 
-        private void AgregarFilaButton_Click(object sender, RoutedEventArgs e)
-        {
-            var detalle = new ProyectosDetalle
-            {
-                ProyectoDetalleId = this.proyecto.ProyectoId,
-                TiposDeTareas = (TiposDeTareas)TipoDeTaeaComboBox.SelectedItem,
-                Requerimiento = RequerimientoTextBox.Text,
-                Tiempo = Utilidades.ToInt(TiempoTextBox.Text)
-            };
-
-            proyecto.TiempoTotal += Utilidades.ToInt(TiempoTextBox.Text);
-
-            proyecto.Detalle.Add(detalle);
             Cargar();
-
         }
+
+        
 
        
 
@@ -145,6 +134,22 @@ namespace P2_AP1_Alvaro_20190269.UI.Registros
                 proyecto.Detalle.RemoveAt(DetalleDataGrid.SelectedIndex);
                 Cargar();
             }
+        }
+
+        private void AgregarFilaButton_Click(object sender, RoutedEventArgs e)
+        {
+            var detalle = new ProyectosDetalle
+            {
+                ProyectoDetalleId = this.proyecto.ProyectoId,
+                TiposDeTareas = (TiposDeTareas)TipoDeTaeaComboBox.SelectedItem,
+                Requerimiento = RequerimientoTextBox.Text,
+                Tiempo = Utilidades.ToInt(TiempoTextBox.Text)
+            };
+
+            proyecto.TiempoTotal += Utilidades.ToInt(TiempoTextBox.Text);
+
+            proyecto.Detalle.Add(detalle);
+            Cargar();
         }
     }
 }
