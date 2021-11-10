@@ -9,8 +9,8 @@ using P2_AP1_Alvaro_20190269.DAL;
 namespace P2_AP1_Alvaro_20190269.Migrations
 {
     [DbContext(typeof(Contexto))]
-    [Migration("20211109000412_Secundaria")]
-    partial class Secundaria
+    [Migration("20211110011404_Segunda")]
+    partial class Segunda
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

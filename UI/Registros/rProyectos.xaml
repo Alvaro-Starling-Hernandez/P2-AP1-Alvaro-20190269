@@ -58,12 +58,12 @@
 
                             </StackPanel>
 
-                            <DataGrid x:Name="DetalleDataGrid" ItemsSource="{Binding ProyectosDetalle}" Height="128" AutoGenerateColumns="False" Margin="0,10" Width="670">
+                            <DataGrid x:Name="DetalleDataGrid" ItemsSource="{Binding Detalle}" Height="128" AutoGenerateColumns="False" Margin="0,10" Width="670">
                                 <DataGrid.Columns>
                                     <DataGridTextColumn Header="Tipo Id" Binding="{Binding TiposDeTareas.TipoDeTareaId}" Width="120"/>
                                     <DataGridTextColumn Header="Tipo Tarea" Binding="{Binding TiposDeTareas.Nombre}" Width="120"/>
-                                    <DataGridTextColumn Header="Requerimiento" Binding="{Binding ProyectosDetalle.Requerimiento}"  Width="305"/>
-                                    <DataGridTextColumn Header="Tiempo" Binding="{Binding ProyectosDetalle.Tiempo}" Width="120"/>
+                                    <DataGridTextColumn Header="Requerimiento" Binding="{Binding Requerimiento}"  Width="305"/>
+                                    <DataGridTextColumn Header="Tiempo" Binding="{Binding Tiempo}" Width="120"/>
                                 </DataGrid.Columns>
 
                             </DataGrid>

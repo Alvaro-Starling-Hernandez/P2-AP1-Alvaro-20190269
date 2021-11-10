@@ -56,11 +56,11 @@ namespace P2_AP1_Alvaro_20190269.UI.Registros
                 MessageBox.Show("Falta la descripcion", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
 
-            /*if(DetalleDataGrid.Items.Count == 0)
+            if(DetalleDataGrid.Items.Count == 0)
             {
                 esValido = false;
                 MessageBox.Show("Falta llenar el datagrid", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-            }*/
+            }
             return esValido;
         }
 
@@ -149,6 +149,7 @@ namespace P2_AP1_Alvaro_20190269.UI.Registros
             proyecto.TiempoTotal += Utilidades.ToInt(TiempoTextBox.Text);
 
             proyecto.Detalle.Add(detalle);
+
             Cargar();
         }
     }

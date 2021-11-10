@@ -65,16 +65,21 @@ namespace P2_AP1_Alvaro_20190269.BLL
 
                 foreach(var detalle in proyectoAnterior.Detalle)
                 {
-                    detalle.TiposDeTareas.TiempoAcomulado -= detalle.Tiempo;
+                    var tarea = contexto.TiposDeTareas.Find(detalle.TiposDeTareas.TipoDeTareaId);
+                    tarea.TiempoAcomulado -= detalle.Tiempo;
+                    detalle.TiposDeTareas = tarea;
                     contexto.Entry(detalle.TiposDeTareas).State = EntityState.Modified;
                 }
 
-                contexto.Database.ExecuteSqlRaw($"Delete FROM ProyectosDetalle Where ProyectoDetalleId = {proyecto.ProyectoId}");
+                contexto.Database.ExecuteSqlRaw($"Delete FROM ProyectosDetalle Where ProyectoId = {proyecto.ProyectoId}");
 
                 foreach (var item in proyecto.Detalle)
                 {
-                    item.TiposDeTareas.TiempoAcomulado += item.Tiempo;
-                    contexto.Entry(item.TiposDeTareas).State = EntityState.Added;
+                    contexto.Entry(item).State = EntityState.Added;
+                    var tarea = contexto.TiposDeTareas.Find(item.TiposDeTareas.TipoDeTareaId);
+                    tarea.TiempoAcomulado += item.Tiempo;
+                    item.TiposDeTareas = tarea;
+                    contexto.Entry(item.TiposDeTareas).State = EntityState.Modified;
                 }
 
                 contexto.Entry(proyecto).State = EntityState.Modified;
